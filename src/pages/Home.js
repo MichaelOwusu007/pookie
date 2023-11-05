@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 
+
 const Home = () => {
   const [dogs, setDogs] = useState([]);
   const [text, setText] = useState('');
@@ -69,7 +70,7 @@ const Home = () => {
             />
           </form>
         </div>
-
+        
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-10 lg:my-20">
           {!searched ? (
             dogs.map((dog) => (
