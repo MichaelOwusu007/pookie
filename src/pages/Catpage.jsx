@@ -88,7 +88,7 @@ const Catpage = () => {
                     {renderImage(cat)}
                     <h3 className="text-white text-lg font-bold mt-4">{cat.name}</h3>
                   <p className="text-slate-400">Temperament: {cat.temperament}</p>
-                  <p className="text-slate-400">Description: {cat.description.slice(0, 200)}{ cat.description.length > 150 ? '...' : '' }</p>
+                  <p className="text-slate-400">Description: {cat.description.slice(0, 150)}{ cat.description.length > 150 ? '...' : '' }</p>
                   <p className="text-slate-400">Origin: {cat.origin}</p>
                   </article>
               </Link>
