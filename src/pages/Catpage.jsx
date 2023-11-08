@@ -55,12 +55,6 @@ const Catpage = () => {
           </h1>
           <p className="my-8 text-white">
             This application is powered by{' '}
-            <a
-              href="https://thecatapi.com"
-              className="text-indigo-600 underline active:text-orange-400"
-            >
-              The Cat Api
-            </a>
           </p>
           
           <form onSubmit={(e) => {
