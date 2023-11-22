@@ -50,13 +50,9 @@ const Catpage = () => {
     <>
       <section className="p-8 max-w-7xl mx-auto">
         <div className="text-center">
-          <h1 className="flex items-center justify-center text-center px-5 text-3xl font-bold lg:text-5xl text-white">
-            The Cat App
+          <h1 className="flex items-center justify-center text-center px-5 mb-8 text-3xl font-bold lg:text-5xl text-white righteous">
+            <p>Pookie: The Mini Cat Pet Finder.</p>
           </h1>
-          <p className="my-8 text-white">
-            This application is powered by{' '}
-          </p>
-          
           <form onSubmit={(e) => {
             e.preventDefault();
             searchForCat();
