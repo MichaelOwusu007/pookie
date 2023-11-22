@@ -28,6 +28,25 @@
     padding: 10px;
 }
 
+@media (max-width:475px) {
+    .main-text{
+        font-size: 30px;
+    }
+
+    .sub-text{
+        font-size: 18px;
+    }
+
+    .btn{
+        width: 150px;
+    }
+
+    .btn div{
+        padding-left:10px;
+        padding-right:10px;
+        font-size: 16px;
+    }
+}
 
 
 
