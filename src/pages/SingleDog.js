@@ -64,7 +64,7 @@ const SingleDog = () => {
               </li>
             </ul>
                 <Link
-                to="/"
+                to="/Dogpage"
                 className="inline-block bg-slate-600 py-2 px-6 rounded mt-8 text-white hover:bg-slate-500 transition-all duration-200"
               >
                 &larr; Back

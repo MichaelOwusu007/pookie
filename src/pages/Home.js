@@ -1,113 +1,47 @@
 
-import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
+import "./Home.css";
 
-
-
-const Home = () => {
-  const [dogs, setDogs] = useState([]);
-  const [text, setText] = useState('');
-  const [searched, setSearched] = useState(false);
-
-  useEffect(() => {
-    const fetchDogData = async () => {
-      try {
-        const res = await fetch(`https://api.thedogapi.com/v1/breeds?api_key=live_o3tfoB3fKnu0680SVIn7XZWOF9sg6KejkUely8ppoGMf3MTQkRZP6ZAuXvuT21SL`);
-        const data = await res.json();
-        setDogs(data);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    setSearched(false);
-    fetchDogData();
-  }, []);
-
-  const searchForDog = async () => {
-    try {
-      const res = await fetch(`https://api.thedogapi.com/v1/breeds/search?q=${text}&api_key=live_o3tfoB3fKnu0680SVIn7XZWOF9sg6KejkUely8ppoGMf3MTQkRZP6ZAuXvuT21SL`);
-      const data = await res.json();
-      setDogs(data);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    searchForDog();
-    setSearched(true);
-  };
-
+function Homepage() {
   return (
-    <>
-      <section className="p-8 max-w-7xl mx-auto">
-        <div className="text-center">
-          <h1 className="flex items-center justify-center text-center px-5 text-3xl font-bold lg:text-5xl text-white">
-            The Dog App
+    <div className='home-container'>
+      <div className='home-content'>
+         <section className='absolute  lg:min-h-screen 2xl:min-h-[90vh] h-screen w-screen  lg:flex lg:flex-row space-y-4'>
+        <section className=' flex flex-col  items-center justify-center w-full lg:pl-14 mx-auto h-full z-0 lg:items-start'>
+          <div>
+          </div>
+          <h1 className='font-extrabold text-[48px] xl:text-[65px] righteous  '>
+            <span className=' flex items-center  '>The cat and dog
+            </span>
+            <span className=' mx-auto flex items-center gap-3 w-max'>Pet lovers <span className='text-pink-600'> paradise</span> 
+            </span>
           </h1>
-          <p className="my-8 text-white">
-            This application is powered by{' '}
-            <a
-              href="https://thedogapi.com"
-              className="text-indigo-600 underline active:text-orange-400"
-            >
-              The Dog Api
-            </a>
-          </p>
-          
-          <form onSubmit={handleSubmit} className="max-w-xl mx-auto" autoComplete="off">
-            <input
-              type="text"
-              name="search"
-              id="search"
-              placeholder="Search for a dog / breed"
-              className="py-2 px-4 rounded shadow w-full bg-slate-400 text-white placeholder-white"
-              value={text}
-              onChange={(e) => setText(e.target.value)}
-            />
-          </form>
-        </div>
-        
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-10 lg:my-20">
-          {!searched ? (
-            dogs.map((dog) => (
-              <Link to={`/${dog.name}`} key={dog.id} className="bg-slate-700 p-4 rounded hover:bg-slate-600 transition-all duration-200">
-                  <article>
-                    <img
-                      src={dog.image.url}
-                      alt={dog.name}
-                      loading="lazy"
-                      className="rounded md:h-72 w-full object-cover"
-                    />
-                    <h3 className="text-white text-lg font-bold mt-4">{dog.name}</h3>
-                    <p className="text-slate-400">Bred For: {dog.bred_for}</p>
-                  </article>
-              </Link>
-            ))
-          ) : (
-            <>
-              {dogs.map((dog) => (
-                <Link to={`/${dog.name}`} key={dog.id} className="bg-slate-700 p-4 rounded hover:bg-slate-600 transition-all duration-200">
-                    <article>
-                      <img
-                        src={`https://cdn2.thedogapi.com/images/${dog.reference_image_id}.jpg`}
-                        alt={dog.name}
-                        className="rounded md:h-72 w-full object-cover"
-                      />
-                      <h3 className="text-white text-lg font-bold mt-4">{dog.name}</h3>
-                      <p className="text-slate-400">Bred For: {dog.bred_for}</p>
-                    </article>
-                </Link>
-              ))}
-            </>
-          )}
-        </div>
-      </section>
-    </>
-  );
-};
+          <p className=' text-[22px] font-semibold top-[400px]   text-center lg:text-start lg:w-[550px] lg:text-[28x] '>Participate in getlinked tech Hackathon 2023 stand a chance to win  big prize</p>
+            <div className='mt-[30px] xl:mt-[30px] flex items-center flex-col justify-center xl:items-start '>
+              <div className='flex flex-row gap-6'>
+                <a href="/Dogpage"><button className='bg-green-500 w-[200px] items-center rounded-md justify-center active:scale-95 h-[50px] flex'><div className='px-8 w-[98%] h-[95%] text-xl flex items-center justify-center transition-all hover:bg-[#150e28] rounded-md mx-auto'>Find Dog</div></button></a>
+                 <a href="/Catpage"><button className='bg-red-500 w-[200px] items-center rounded-md justify-center active:scale-95 h-[50px] flex'><div className='px-8 w-[98%] h-[95%] text-xl flex items-center justify-center transition-all hover:bg-[#150e28] rounded-md mx-auto'>Find Cat</div></button></a>
+                </div>
+          <div className=' pt-5 flex gap-6 justify-center items-center  text-center font-medium '>
+            <span>
+              <span className='text-[25px] '>Find</span>
+            </span>
+            <span>
+              <span className='text-[25px] '>Your</span>
+            </span>
+            <span>
+              <span className=' text-[25px]'>Perfect</span>
+            </span>
+              <span>
+              <span className=' text-[25px]'>Match.</span>
+            </span>
+            </div>
+          </div>
+          </section>
+          </section>
+      </div>
+    </div>
+  )
+}
 
-export default Home;
+export default Homepage
