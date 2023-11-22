@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-dom";
+
 
 const Catpage = () => {
   const [cats, setCats] = useState([]);
@@ -42,7 +42,7 @@ const Catpage = () => {
         />
       );
     } else {
-      return <div>No Image Available</div>;
+      return <div><img src="no_preview.jpg" alt=""  className='md:h-72 w-full'/></div>;
     }
   };
 
@@ -51,7 +51,7 @@ const Catpage = () => {
       <section className="p-8 max-w-7xl mx-auto">
         <div className="text-center">
           <h1 className="flex items-center justify-center text-center px-5 mb-8 text-3xl font-bold lg:text-5xl text-white righteous">
-            <p>Pookie: The Mini Cat Pet Finder.</p>
+            <p>Pookie: The Right Cat Is Here</p>
           </h1>
           <form onSubmit={(e) => {
             e.preventDefault();
@@ -73,20 +73,20 @@ const Catpage = () => {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 my-10 lg:my-20">
           {!searched ? (
             cats.map((cat) => (
-              <Link to={`/${cat.name}`} key={cat.id} className="bg-slate-700 p-4 rounded hover:bg-slate-600 transition-all duration-200">
+              <div to={`/${cat.name}`} key={cat.id} className="bg-slate-700 p-4 rounded hover:bg-slate-600 transition-all duration-200">
                   <article>
                     {renderImage(cat)}
                     <h3 className="text-white text-lg font-bold mt-4">{cat.name}</h3>
                   <p className="text-slate-400">Temperament: {cat.temperament}</p>
-                  <p className="text-slate-400">Description: {cat.description.slice(0, 150)}{ cat.description.length > 150 ? '...' : '' }</p>
+                  <p className="text-slate-400">Description: {cat.description.slice(0, 100)}{ cat.description.length > 100 ? '...' : '' }</p>
                   <p className="text-slate-400">Origin: {cat.origin}</p>
                   </article>
-              </Link>
+              </div>
             ))
           ) : (
             <>
               {cats.map((cat) => (
-                <Link to={`/${cat.name}`} key={cat.id} className="bg-slate-700 p-4 rounded hover-bg-slate-600 transition-all duration-200">
+                <div to={`/${cat.name}`} key={cat.id} className="bg-slate-700 p-4 rounded hover-bg-slate-600 transition-all duration-200">
                     <article>
                       {renderImage(cat)}
                       <h3 className="text-white text-lg font-bold mt-4">{cat.name}</h3>
@@ -94,7 +94,7 @@ const Catpage = () => {
                     <p className="text-slate-400">Description: {cat.description}</p>
                     <p className="text-slate-400">Origin: {cat.origin}</p>
                     </article>
-                </Link>
+                </div>
               ))}
             </>
           )}
