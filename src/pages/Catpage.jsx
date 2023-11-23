@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Catpage = () => {
@@ -49,6 +50,12 @@ const Catpage = () => {
   return (
     <>
       <section className="p-8 max-w-7xl mx-auto">
+        <Link to='/' className='' >
+       <button className='font-bold cursor-pointer text-[18px] lg:text-xl text-pink-500  -left-4 lg:top-10 lg:left-14 -top-4 relative'>
+        POOKIE
+       <div className='absolute left-5 top-4 py-1 px-2 bg-black rounded text-base text-white'>Home</div>
+        </button>
+       </Link>
         <div className="text-center">
           <h1 className="flex items-center justify-center text-center px-5 mb-8 text-3xl font-bold lg:text-5xl text-white righteous">
             <p>Pookie: The Right Cat Is Here</p>

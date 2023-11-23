@@ -1,19 +1,17 @@
 
 import React from 'react';
 import "./Home.css";
-import { Link } from 'react-router-dom';
+
 
 function Homepage() {
   return (
     <div className='home-container'>
       <div className='home-content'>
-       <Link to='/' className=' left-5 lg:top-10 lg:left-14 top-5 relative' >
-       <button className='font-bold cursor-pointer text-[18px] lg:text-xl text-pink-500'>
+       <button className='font-bold top-5 left-5 lg:top-10 lg:left-14 cursor-pointer text-[18px] lg:text-xl text-pink-500 relative'>
         POOKIE
        <div className='absolute left-5 top-5 py-1 px-2 bg-black rounded text-base text-white'>Home</div>
         </button>
-       </Link>
-         <section className='absolute  lg:min-h-screen 2xl:min-h-[90vh] h-screen w-screen lg:items-center justify-center lg:flex lg:flex-row space-y-4'>
+         <section className=' lg:min-h-screen 2xl:min-h-[90vh] h-screen w-screen lg:items-center justify-center lg:flex lg:flex-row space-y-4'>
         <section className=' flex flex-col  items-center justify-center w-full lg:pl-14 mx-auto h-full z-0 lg:items-start'>
           <div>
           </div>
@@ -38,9 +36,6 @@ function Homepage() {
             </span>
             <span>
               <span className=' text-[25px]'>Match</span>
-            </span>
-              <span>
-              <span className=' text-[25px]'></span>
             </span>
             </div>
           </div>
