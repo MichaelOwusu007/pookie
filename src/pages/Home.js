@@ -7,8 +7,8 @@ function Homepage() {
   return (
     <div className='home-container'>
       <div className='home-content'>
-       <Link to='/' className='' >
-       <button className='font-bold top-5 left-5 lg:top-10 lg:left-14 cursor-pointer text-[18px] lg:text-xl text-pink-500 relative'>
+       <Link to='/' className=' left-5 lg:top-10 lg:left-14 top-5 relative' >
+       <button className='font-bold cursor-pointer text-[18px] lg:text-xl text-pink-500'>
         POOKIE
        <div className='absolute left-5 top-5 py-1 px-2 bg-black rounded text-base text-white'>Home</div>
         </button>
